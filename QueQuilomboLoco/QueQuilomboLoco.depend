@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1492502455 source:f:\usuarios\alumno\escritorio\quequilomboloco\main.c
+	<stdio.h>
+	<stdlib.h>
+	"veterinarias.h"
+
+1492498239 f:\usuarios\alumno\escritorio\quequilomboloco\veterinarias.h
+
+1492501728 source:f:\usuarios\alumno\escritorio\quequilomboloco\veterinarias.c
+	<string.h>
+	"veterinarias.h"
+
