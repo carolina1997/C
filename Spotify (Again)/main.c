@@ -27,6 +27,7 @@ void mostrarInterpretes(eInterprete[], int);
 void cancionesxInterprete(eInterprete[],eCancion[],int ,int);
 void bajaInterprete(eInterprete[], int);
 void artistasConMasCanciones (eCancion[],eInterprete[], int, int);
+void sumatoriaDeDuracionDeCancion(eCancion[], eInterprete[], int , int);
 
 
 
@@ -50,7 +51,10 @@ int main()
         printf("8-.Modificar interprete\n");
         printf("9-.Modificar canciones\n");
         printf("10-.Mostrar canciones artitas argentinos\n");
-        printf("11-.Salir\n");
+        printf("11- artistas con mas canciones:\n");
+        printf("12-sumatoria de duracion de canciones");
+        printf("13-.Salir\n");
+
 
         scanf("%d",&opcion);
 
@@ -102,6 +106,17 @@ int main()
                 case 10:
                     break;
                 case 11:
+                    {
+                      artistasConMasCanciones (cancion, interprete, 10, 5);
+
+                    }
+                    break;
+                case 12:
+                    {
+                        artistasConMasCanciones (cancion, interprete, 10, 5);
+                    }
+                    break;
+                case 13:
                     seguir = 'n';
                     break;
         }
@@ -239,26 +254,71 @@ void artistasConMasCanciones (eCancion cancion[], eInterprete interprete[], int 
    int i, j;
 
    int maximos[5];
-   int contadores[5]={0,0,0,0,0};
-   int IDs[5];
+   int contadores[5]={0,0,0,0,0}; // inicializacion del vector de contadores
+   int IDs[5]; //reciben los id de los interpretes!!!!
 
     for(i=0;i<tamI;i++)
     {
-        IDs[i]= interprete[i].idInterprete;
+        IDs[i]= interprete[i].idInterprete; //asignacion de los id de interpretes a la variable IDs!1
     }
 
         for(i=0;i<tamI;i++)
         {
             for(j=0;j<tamC;j++)
             {
-                if(IDs[i] == cancion[j].interprete)
+                if(IDs[i] == cancion[j].interprete) //comparar si los IDs de los interpretes coinsiden si es igual a IDi!!
                 {
-                    contadores[i]++;
+                    contadores[i]++; //si es que coinciden cunta, apartir de la posicion en la que esta!!
                 }
             }
         }
 
-        for(i=0;i<tamI)
+        for(i=0;i<tamI;i++)
+        {
+            if(contadores[i] <= (contadores[i+1]))
+            {
+                maximos[i] = contadores[i+1];
+            }
+        }
+      printf("los artistas con mas canciones son:\n");
+
+      for(i=0;i<tamI;i++)
+      {
+          printf("%s------ %d\n",interprete[i].nombre, maximos[i]);
+      }
+
+}
+
+void sumatoriaDeDuracionDeCancion(eCancion cancion[], eInterprete interprete[], int tamC, int tamI)
+{
+    float sumador=0;
+    int j,i;
+    char auxNombre[50];
+
+ printf("ingrese nombre");
+ fflush(stdin);
+ gets(auxNombre);
+
+ for(i=0;i<tamI;i++)
+ {
+        for(j=0;j<tamC;j++)
+         {
+
+            if(strcmp(interprete[i].nombre, auxNombre)== 0 && cancion[j].estadoC == 1)
+            {
+                if(interprete[i].idInterprete == cancion[j].interprete)
+                {
+                    sumador+= cancion[j].duracion;
+
+                    printf("interprete: %s duracion : %.2f",interprete[i].nombre,sumador);
+                    break;
+                }
+            }
+
+         }
+
+    break;
+ }
 
 }
 
