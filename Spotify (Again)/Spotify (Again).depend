@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1505833937 source:c:\users\alumno\desktop\spotify (again)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1506431766 source:c:\users\alumno\downloads\programacion-y-laboratorio-i-master\programacion-y-laboratorio-i-master\clase 10\spotify (again)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
