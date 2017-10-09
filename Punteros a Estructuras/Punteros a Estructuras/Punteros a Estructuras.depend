@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1507561068 source:c:\users\alumno\desktop\punteros a estructuras\punteros a estructuras\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1507561557 c:\users\alumno\desktop\punteros a estructuras\punteros a estructuras\funciones.h
+
+1507561095 source:c:\users\alumno\desktop\punteros a estructuras\punteros a estructuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
