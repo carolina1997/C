@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1525482379 source:c:\users\alumno\desktop\estructurad_practica_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+
